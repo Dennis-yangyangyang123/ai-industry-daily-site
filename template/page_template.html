@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>全球AI产业链全景 —— 从算力芯片到光进铜退：行情、Capex、主线与应对（截至2026-07-22）</title>
+<meta name="description" content="全球AI产业链深度全景：今日行情与叙事、云厂商Capex全景、光互连主线深拆（800G→1.6T→3.2T/硅光/CPO）、核心标的拆解、国产算力、本轮调整应对与催化剂日历。"/>
+<style>
+:root{
+  --bg:#FAF7F2; --bg2:#F5F1EA; --card:#FFFDFB;
+  --ink:#2B2622; --ink-soft:#6E6459; --ink-faint:#97897B;
+  --accent:#B4552D; --accent-soft:#C97B57; --accent-bg:#F3E4DA;
+  --sage:#5F7A61; --sage-bg:#E7EDE5;
+  --line:#E5DED3; --line-strong:#D5CBBD;
+  --up:#A63D40; --up-bg:#F2E3E1;
+  --down:#4A6B4F; --down-bg:#E4EBE2;
+  --ochre:#8A6D3B; --brown:#6B5D4F;
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  --shadow:0 1px 2px rgba(43,38,34,.04),0 8px 28px rgba(43,38,34,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:#FFF8F0}
+h1,h2,h3,h4,.serif{font-family:var(--serif)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.container{max-width:1080px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+strong{font-weight:700}
+.tac{color:var(--accent)}.tup{color:var(--up)}.tdn{color:var(--down)}.tsg{color:var(--sage)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-soft));z-index:120}
+header.site{position:fixed;top:3px;left:0;right:0;z-index:110;background:rgba(250,247,242,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1080px;margin:0 auto;padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav .brand{font-family:var(--serif);font-weight:700;font-size:15px;white-space:nowrap}
+.nav .brand em{font-style:normal;color:var(--accent)}
+.nav nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.nav nav::-webkit-scrollbar{display:none}
+.nav nav a{font-size:13px;color:var(--ink-soft);padding:6px 10px;border-radius:6px;white-space:nowrap}
+.nav nav a:hover{background:var(--accent-bg);color:var(--accent)}
+.hero{padding:130px 0 56px;border-bottom:1px solid var(--line)}
+.hero .kicker{font-size:13px;letter-spacing:.28em;color:var(--accent);font-weight:700;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:900;line-height:1.32;margin-bottom:20px}
+.hero h1 .hl{color:var(--accent)}
+.hero .lede{font-size:17px;color:var(--ink-soft);max-width:780px;margin-bottom:26px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--ink-faint)}
+.hero .meta span{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:4px 14px}
+section.blk{padding:64px 0 24px}
+.sec-tag{display:inline-block;font-size:12px;letter-spacing:.24em;font-weight:700;color:var(--accent);border:1px solid var(--accent-soft);border-radius:20px;padding:3px 14px;margin-bottom:14px}
+h2.sec{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin-bottom:10px}
+.sec-sub{color:var(--ink-soft);font-size:15px;max-width:820px;margin-bottom:28px}
+h3.sub{font-size:20px;font-weight:700;margin:34px 0 14px;padding-left:12px;border-left:4px solid var(--accent)}
+p.body{margin:0 0 14px;color:var(--ink);max-width:860px}
+p.note{font-size:13px;color:var(--ink-faint);margin:8px 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px 24px;margin:18px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.kpi .lbl{font-size:12px;color:var(--ink-faint);letter-spacing:.06em;margin-bottom:4px}
+.kpi .val{font-family:var(--serif);font-size:26px;font-weight:900}
+.kpi .chg{font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+th{background:var(--bg2);text-align:left;padding:10px 14px;font-weight:700;color:var(--brown);border-bottom:1px solid var(--line-strong);white-space:nowrap}
+td{padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--bg2)}
+.badge{display:inline-block;font-size:11px;font-weight:700;border-radius:4px;padding:1px 8px;white-space:nowrap}
+.b-red{background:var(--up-bg);color:var(--up)}
+.b-grn{background:var(--down-bg);color:var(--down)}
+.b-acc{background:var(--accent-bg);color:var(--accent)}
+.b-sage{background:var(--sage-bg);color:var(--sage)}
+.callout{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0;font-size:15px}
+.callout.green{border-color:var(--sage);background:var(--sage-bg)}
+.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:16px 0}
+.chain .node{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;position:relative}
+.chain .node h4{font-size:14px;color:var(--accent);margin-bottom:4px}
+.chain .node p{font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+ul.tick{list-style:none;margin:10px 0}
+ul.tick li{padding-left:24px;position:relative;margin-bottom:8px}
+ul.tick li::before{content:"◆";position:absolute;left:2px;color:var(--accent);font-size:11px;top:4px}
+ol.steps{margin:10px 0 10px 22px}
+ol.steps li{margin-bottom:8px}
+.foot{border-top:1px solid var(--line);margin-top:70px;padding:34px 0 50px;color:var(--ink-faint);font-size:13px}
+.reveal{opacity:0;transform:translateY(18px);transition:all .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.on{opacity:1;transform:none}
+@media(max-width:720px){.nav nav{display:none}}
+</style>
+</head><body>
+<div id="progress"></div>
+<header class="site"><div class="nav">
+<div class="brand">全球<em>AI产业链</em>全景 · 2026-07-22</div>
+<nav>
+<a href="#today">今日行情</a><a href="#map">产业链地图</a><a href="#capex">Capex全景</a><a href="#optical">光互连主线</a><a href="#stocks">标的拆解</a><a href="#china">中国力量</a><a href="#drawdown">调整与应对</a><a href="#calendar">催化剂日历</a><a href="#onepage">一页纸</a>
+</nav>
+</div></header>
+
+<div class="hero"><div class="container">
+<div class="kicker">GLOBAL AI SUPPLY CHAIN · DEEP DIVE</div>
+<h1>全球AI产业链全景：<br/>Capex 仍在上行，<span class="hl">价值正沿着「光」迁移</span></h1>
+<p class="lede">四大云厂 2026 年资本开支指引合计约 5987 亿美元（同比 +67%），军备竞赛的总盘子没有变小；但 7 月中旬以来 A 股 AI 硬件经历了一轮剧烈的去杠杆式调整——光模块龙头单日 -12%，光芯片周跌 20-33%。这份报告把「产业在发生什么」与「股价在发生什么」拆开来看：前者决定方向，后者决定节奏。</p>
+<div class="meta"><span>数据截至 2026-07-22 收盘（美股为 07-21 收盘）</span><span>数据源：iFinD · 进门财经 · 冈底斯研报库</span><span>重点主线：光互连 / 光芯片</span></div>
+</div></div>
+
+<section class="blk" id="today"><div class="container reveal">
+<div class="sec-tag">SECTION 01</div>
+<h2 class="sec">今日 · 全球AI行情与叙事</h2>
+<p class="sec-sub">A/H 大跌延续，光互连链领跌；美股 AI 硬件同步走弱但幅度温和。颜色约定：<span class="badge b-red">红=涨</span> <span class="badge b-grn">绿=跌</span>（A/H 惯例）。</p>
+
+<div class="grid3">
+<div class="kpi"><div class="lbl">创业板指（07-22）</div><div class="val num">3566.73</div><div class="chg tdn num">-3.23% · 近1月 -18.2%</div></div>
+<div class="kpi"><div class="lbl">科创50（07-22）</div><div class="val num">1860.08</div><div class="chg tdn num">-2.26% · 近3月 +28.2%</div></div>
+<div class="kpi"><div class="lbl">恒生科技（07-22）</div><div class="val num">4668.23</div><div class="chg tdn num">-3.04% · YTD -15.4%</div></div>
+</div>
+
+<h3 class="sub">A股 AI 硬件核心标的（数据日期 2026-07-22 收盘，今日盘前未开盘）</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>标的</th><th>收盘价</th><th>当日</th><th>近1周</th><th>近1月</th><th>YTD</th><th>近1年</th></tr></thead>
+<tbody>
+<tr><td><strong>中际旭创</strong> 300308</td><td class="num">1060.80</td><td class="num tdn">-6.66%</td><td class="num tdn">-9.28%</td><td class="num tdn">-19.16%</td><td class="num tup">+74.1%</td><td class="num tup">+625%</td></tr>
+<tr><td><strong>新易盛</strong> 300502</td><td class="num">508.80</td><td class="num tdn">-7.79%</td><td class="num tdn">-8.49%</td><td class="num tdn">-8.37%</td><td class="num tup">+65.5%</td><td class="num tup">+436%</td></tr>
+<tr><td><strong>天孚通信</strong> 300394</td><td class="num">217.63</td><td class="num tdn">-5.79%</td><td class="num tdn">-16.10%</td><td class="num tdn">-33.09%</td><td class="num tup">+50.3%</td><td class="num tup">+250%</td></tr>
+<tr><td><strong>太辰光</strong> 300570</td><td class="num">145.53</td><td class="num tdn">-5.00%</td><td class="num tdn">-26.06%</td><td class="num tdn">-46.11%</td><td class="num tup">+26.5%</td><td class="num tup">+42.9%</td></tr>
+<tr><td><strong>源杰科技</strong> 688498</td><td class="num">1415.00</td><td class="num tdn">-6.29%</td><td class="num tdn">-21.78%</td><td class="num tdn">≈-30%</td><td class="num tup">高位回落</td><td class="num tup">大幅领涨后回撤</td></tr>
+<tr><td><strong>仕佳光子</strong> 688313</td><td class="num">116.30</td><td class="num tdn">-4.59%</td><td class="num tdn">-20.72%</td><td class="num tdn">-42.80%</td><td class="num tup">+31.3%</td><td class="num tup">+206%</td></tr>
+<tr><td><strong>长光华芯</strong> 688048</td><td class="num">300.03</td><td class="num tdn">-7.85%</td><td class="num tdn">-32.88%</td><td class="num tdn">-28.56%</td><td class="num tup">+139%</td><td class="num tup">+400%</td></tr>
+<tr><td><strong>光库科技</strong> 300620</td><td class="num">234.39</td><td class="num tdn">-3.28%</td><td class="num tdn">-18.55%</td><td class="num tdn">-42.27%</td><td class="num tup">+59.5%</td><td class="num tup">+407%</td></tr>
+<tr><td><strong>寒武纪</strong> 688256</td><td class="num">1310.00</td><td class="num tdn">-2.96%</td><td class="num tdn">-2.78%</td><td class="num tdn">-9.84%</td><td class="num tup">+44.1%</td><td class="num tup">+273%</td></tr>
+<tr><td><strong>海光信息</strong> 688041</td><td class="num">331.60</td><td class="num tdn">-3.75%</td><td class="num tup">+2.31%</td><td class="num tdn">-1.63%</td><td class="num tup">+47.9%</td><td class="num tup">+146%</td></tr>
+<tr><td><strong>沪电股份</strong> 002463</td><td class="num">114.23</td><td class="num tdn">-6.83%</td><td class="num tdn">-16.76%</td><td class="num tdn">-20.31%</td><td class="num tup">+57.1%</td><td class="num tup">+143%</td></tr>
+<tr><td><strong>工业富联</strong> 601138</td><td class="num">60.71</td><td class="num tdn">-0.44%</td><td class="num tdn">-4.57%</td><td class="num tdn">-20.93%</td><td class="num tdn">-1.6%</td><td class="num tup">+138%</td></tr>
+</tbody></table></div>
+<p class="note">一个关键结构信号：<strong>光芯片/无源器件（长光华芯、太辰光、仕佳光子、光库）周跌 19-33%，明显深于光模块龙头（旭创/新易盛周跌 8-9%）</strong>——高弹性、高涨幅、盈利兑现更远的「期权型」标的先被去杠杆资金抛售，这是典型的杠杆出清而非基本面证伪的形态。</p>
+
+<h3 class="sub">美股 AI 产业链（07-21 收盘 / 07-22 盘前实时口径）</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>标的</th><th>收盘价($)</th><th>当日</th><th>近1周</th><th>近1月</th><th>YTD</th><th>近1年</th></tr></thead>
+<tbody>
+<tr><td><strong>英伟达</strong> NVDA</td><td class="num">205.41</td><td class="num tdn">-0.91%</td><td class="num tdn">-3.34%</td><td class="num tup">+2.68%</td><td class="num tup">+10.3%</td><td class="num tup">+20.4%</td></tr>
+<tr><td><strong>博通</strong> AVGO</td><td class="num">379.17</td><td class="num tdn">-1.90%</td><td class="num tdn">-3.83%</td><td class="num tdn">-0.26%</td><td class="num tup">+10.0%</td><td class="num tup">+34.6%</td></tr>
+<tr><td><strong>台积电</strong> TSM</td><td class="num">414.00</td><td class="num tdn">-2.50%</td><td class="num tdn">-1.31%</td><td class="num tdn">-5.13%</td><td class="num tup">+36.8%</td><td class="num tup">+73.7%</td></tr>
+<tr><td><strong>美光</strong> MU</td><td class="num">930.25</td><td class="num tdn">-4.18%</td><td class="num tup">+2.87%</td><td class="num tdn">-11.54%</td><td class="num tup">+226%</td><td class="num tup">+748%</td></tr>
+<tr><td><strong>迈威尔</strong> MRVL</td><td class="num">200.70</td><td class="num tdn">-3.49%</td><td class="num tup">+6.37%</td><td class="num tdn">-13.38%</td><td class="num tup">+137%</td><td class="num tup">+143%</td></tr>
+<tr><td><strong>Coherent</strong> COHR</td><td class="num">307.50</td><td class="num tdn">-3.06%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td><strong>Fabrinet</strong> FN</td><td class="num">512.48</td><td class="num tdn">-2.82%</td><td class="num tup">+7.13%</td><td class="num tup">+8.78%</td><td class="num tup">+12.6%</td><td class="num tup">+1.2%</td></tr>
+<tr><td><strong>Arista</strong> ANET</td><td class="num">171.90</td><td class="num tdn">-1.54%</td><td class="num tdn">-0.01%</td><td class="num tup">+5.98%</td><td class="num tup">+31.2%</td><td class="num tup">+52.1%</td></tr>
+<tr><td><strong>甲骨文</strong> ORCL</td><td class="num">125.53</td><td class="num tdn">-1.20%</td><td class="num tdn">-0.70%</td><td class="num tdn">-11.35%</td><td class="num tdn">-35.0%</td><td class="num tdn">-30.2%</td></tr>
+<tr><td><strong>谷歌</strong> GOOG</td><td class="num">347.00</td><td class="num tup">+0.23%</td><td class="num tdn">-6.27%</td><td class="num tup">+0.27%</td><td class="num tup">+10.7%</td><td class="num tup">+81.7%</td></tr>
+<tr><td><strong>Meta</strong> META</td><td class="num">645.00</td><td class="num tup">+0.18%</td><td class="num tdn">-0.13%</td><td class="num tdn">-5.33%</td><td class="num tdn">-2.3%</td><td class="num tup">+4.7%</td></tr>
+<tr><td><strong>亚马逊</strong> AMZN</td><td class="num">248.15</td><td class="num tup">+0.24%</td><td class="num tdn">-2.67%</td><td class="num tup">+6.00%</td><td class="num tup">+7.5%</td><td class="num tup">+8.7%</td></tr>
+</tbody></table></div>
+
+<h3 class="sub">今日三条最重要的叙事</h3>
+<div class="grid3">
+<div class="card"><span class="badge b-acc">事件</span><h4 style="margin:8px 0 6px">英伟达 Vera Rubin 完成全面量产</h4><p style="font-size:14px;color:var(--ink-soft)">7-21 官宣 Vera Rubin 平台已覆盖 30 国 350+ 工厂节点，CoreWeave/谷歌云/Azure/甲骨文云已采用 NVL72；CoreWeave 测试每兆瓦 Token 吞吐提升 10×。同日发布 Spectrum-6 以太网交换系统（单机 102.4Tbps，是上代两倍）——光互连商业化确定性凸显，硅光子渗透带动上游光芯片需求高速增长。</p></div>
+<div class="card"><span class="badge b-red">业绩</span><h4 style="margin:8px 0 6px">联讯仪器中报预增 802%~926%</h4><p style="font-size:14px;color:var(--ink-soft)">7-22 晚，光模块测试仪器龙头预告半年净利 5.1-5.8 亿元。测试设备是产能扩张的领先指标——光模块/光芯片厂商扩产意愿强烈的最直接旁证，与「需求见顶」叙事直接矛盾。公司为 A 股股价最高个股（最新 1880.8 元）。</p></div>
+<div class="card"><span class="badge b-acc">事件</span><h4 style="margin:8px 0 6px">中际旭创 H 股启动招股，基石抢筹 270 亿</h4><p style="font-size:14px;color:var(--ink-soft)">7-22 开启香港公开发售，发行价上限 1010 港元/股，最高募资约 545 亿港元，或成 2026 年港股最大 IPO。淡马锡、高瓴、贝莱德、阿里、腾讯等 33 家基石认购超 270 亿港元；7-27 截止招股、7-30 挂牌（03308.HK）——全球定价资金对中国光模块态度的锚。</p></div>
+</div>
+</div></section>
+<section class="blk" id="map"><div class="container reveal">
+<div class="sec-tag">SECTION 02</div>
+<h2 class="sec">全球AI产业链地图：价值向下一个环节迁移</h2>
+<p class="sec-sub">AI 产业的价值分配不是静态的。2023 年在 GPU，2024-25 年扩散到 HBM/存储与电力，2026 年正在向「互连」——尤其是光互连——集中。理解这张地图，才能理解为什么光通信是本页的主线。</p>
+
+<div class="chain">
+<div class="node"><h4>① 模型/应用</h4><p>OpenAI · Anthropic · Google Gemini · 国产大模型。推理需求爆发是一切 Capex 的源头。</p></div>
+<div class="node"><h4>② 云厂商 Capex</h4><p>微软/谷歌/Meta/亚马逊 2026 指引合计约 5987 亿美元（+67%）。军备竞赛总闸门。</p></div>
+<div class="node"><h4>③ 算力芯片</h4><p>NVDA GPU + 博通/Marvell ASIC。JPM：ASIC 占比 2026 年 42% → 2027 年 53%，出货增速近 GPU 两倍。</p></div>
+<div class="node"><h4>④ 先进制造/存储</h4><p>台积电 CoWoS · HBM（美光近1年 +745% 即此逻辑）· 先进封装。</p></div>
+<div class="node"><h4>⑤ 互连（本页主线）</h4><p>光模块 800G→1.6T→3.2T · 硅光 · CPO/NPO · 光背板 · MPO/跳线 · 交换机。「光进铜退」。</p></div>
+<div class="node"><h4>⑥ 整机/电力/IDC</h4><p>服务器 ODM（工业富联）· PCB（沪电）· 液冷 · 电力设备 · 数据中心。</p></div>
+</div>
+
+<div class="callout"><strong>核心判断：速率提升 = 光互连环节「量增 × 价增」双击。</strong>GPU→ASIC 的多元化不是光的利空而是利多——ASIC 单芯片算力较低、更依赖网络带宽弥补，单集群光模块配比更高。外资（高盛）已把 2026-28 年 800G 及以上出货预测上调 14%/29%/33%，并预计 800G/1.6T/3.2T 中硅光占比达 60%/80%/100%。</p></div>
+
+<h3 class="sub">谁在链条里赚走了钱：环节盈利质量速览</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>环节</th><th>代表公司</th><th>2026 景气度</th><th>竞争格局</th><th>关键变量</th></tr></thead>
+<tbody>
+<tr><td>GPU</td><td>英伟达</td><td><span class="badge b-red">高位维持</span></td><td>一家独大但份额缓降</td><td>Rubin 放量节奏、对华合规版出货</td></tr>
+<tr><td>ASIC</td><td>博通、Marvell、谷歌TPU</td><td><span class="badge b-red">加速</span></td><td>三强+自研并进</td><td>2027E 谷歌TPU 800万颗（JPM）</td></tr>
+<tr><td>HBM/存储</td><td>美光、SK海力士、三星</td><td><span class="badge b-red">量价齐升</span></td><td>三寡头、供不应求</td><td>HBM4 定价、扩产节奏</td></tr>
+<tr><td><strong>光模块</strong></td><td>中际旭创、新易盛、Coherent</td><td><span class="badge b-red">量价双击</span></td><td>中国厂商全球份额 &gt;60%</td><td>1.6T 爬坡、3.2T 定点、硅光良率</td></tr>
+<tr><td><strong>光芯片</strong></td><td>源杰、长光华芯、Lumentum</td><td><span class="badge b-red">供需缺口</span></td><td>EML/CW 高壁垒、国产替代早期</td><td>产能爬坡（东山5-6亿颗/源杰0.6亿颗/长光1-1.2亿颗 2027E满产口径）</td></tr>
+<tr><td><strong>无源器件/连接</strong></td><td>天孚、太辰光、仕佳</td><td><span class="badge b-red">CPO期权</span></td><td>细分隐形冠军</td><td>CPO 上量时点（良率是核心瓶颈）</td></tr>
+<tr><td>交换机/网络</td><td>Arista、锐捷、博通</td><td><span class="badge b-red">上行</span></td><td>白盒化加速</td><td>Scale-up 以太网 vs NVLink</td></tr>
+<tr><td>PCB/整机</td><td>沪电、工业富联</td><td><span class="badge b-acc">分化</span></td><td>拥挤度上升</td><td>「涨价叙事」被市场重新定价中</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="blk" id="capex"><div class="container reveal">
+<div class="sec-tag">SECTION 03</div>
+<h2 class="sec">全球AI Capex 全景：总闸门仍在放水</h2>
+<p class="sec-sub">一切 AI 硬件投资逻辑的锚。判断很简单：只要这张表在增长，产业链的「量」就没有见顶；股价的波动只是节奏问题。</p>
+
+<h3 class="sub">北美四大云厂：2025 实绩 → 2026 指引</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>公司</th><th>2025 年 Capex</th><th>2026 年指引</th><th>同比</th><th>投向重点</th></tr></thead>
+<tbody>
+<tr><td><strong>亚马逊</strong></td><td class="num">1310 亿美元</td><td class="num">约 2000 亿美元</td><td class="num tup">+43%</td><td>AWS · 自研芯片(Trainium) · 基础设施</td></tr>
+<tr><td><strong>谷歌</strong></td><td class="num">914 亿美元</td><td class="num">1750-1850 亿美元</td><td class="num tup">+97%</td><td>约60%服务器、40% IDC与网络；TPU 大扩产</td></tr>
+<tr><td><strong>Meta</strong></td><td class="num">722 亿美元</td><td class="num">1150-1350 亿美元</td><td class="num tup">+73%</td><td>服务器、数据中心、网络基础设施</td></tr>
+<tr><td><strong>微软</strong></td><td class="num">646 亿美元(自然年口径估)</td><td class="num">&gt;937 亿美元（估算）</td><td class="num tup">增速高于2025年(45%)</td><td>一半短期资产(GPU/CPU)、一半AI应用扩展</td></tr>
+<tr style="background:var(--bg2)"><td><strong>合计</strong></td><td class="num"><strong>约 3592 亿美元</strong></td><td class="num"><strong>约 5987 亿美元</strong></td><td class="num tup"><strong>+67%</strong></td><td>（兴业证券整理口径；另有券商按三家已披露口径合计约5050亿/+72%）</td></tr>
+</tbody></table></div>
+<p class="note">交叉验证：Bernstein 2026 展望预计四大 CSP 数据中心 Capex 2026 年增长 &gt;50%，Meta +65%、谷歌 +61% 领先，四家均不低于 +40%——多家口径互相印证「2026 继续大年」。</p>
+
+<h3 class="sub">中国科技巨头：同样在踩油门</h3>
+<ul class="tick">
+<li><strong>阿里巴巴</strong>：2025 年前三季 Capex 同比 <strong>+132%</strong>，AI+云三年 3800 亿元投入计划推进中。</li>
+<li><strong>腾讯</strong>：同比 +48%；<strong>百度</strong>：同比 +74%。字节跳动（未上市）被多家券商列为 2026 年国内算力采购最大边际增量。</li>
+<li>国内 Capex 的特殊性：受供给约束（先进制程、HBM）大于需求约束——H200 合规版获批入华 + 国产芯片放量，2026 年供给端从「紧缺」转向「结构性平衡」，压制业绩兑现的瓶颈正在解除。</li>
+</ul>
+
+<h3 class="sub">三档情景推演</h3>
+<div class="grid3">
+<div class="card"><span class="badge b-grn">保守</span><p style="font-size:14px;margin-top:8px">2026 全球 AI Capex 增速降至 +40%（Bernstein 下限），2027 年增速回落至 +15-20%。光模块量仍增长但价格竞争加剧。对应策略：只持有业绩兑现最确定的龙头。</p></div>
+<div class="card"><span class="badge b-acc">中性（基准）</span><p style="font-size:14px;margin-top:8px">2026 年 +60-70%（当前指引口径），2027 年 +25-35%。1.6T 放量、3.2T 于 2027 年导入。光互连量价双击延续两年。对应策略：龙头+弹性组合，回调分批。</p></div>
+<div class="card"><span class="badge b-red">乐观</span><p style="font-size:14px;margin-top:8px">推理需求超预期 + 主权AI（中东/欧洲/日韩）接力，2027 年仍 +40%以上。光芯片供需缺口贯穿 2027 年，涨价逻辑扩散。对应策略：加大光芯片/CPO 期权型标的权重。</p></div>
+</div>
+
+<div class="callout green"><strong>但三个裂缝要盯紧：</strong>① 甲骨文 YTD -35%——市场已开始惩罚「高杠杆买算力、回报不清晰」的商业模式，这是 Capex 叙事的第一道裂缝；② 云厂折旧年限与自由现金流压力（Meta/微软 FCF 增速已被 Capex 吞噬）；③ ASIC 放量若显著快于预期，英伟达毛利率叙事松动会带动整个链条估值中枢下移。</div>
+</div></section>
+
+<section class="blk" id="optical"><div class="container reveal">
+<div class="sec-tag">SECTION 04 · 主线深拆</div>
+<h2 class="sec">光互连：速率升级的「量价双击」主线</h2>
+<p class="sec-sub">这是本页刻意加重的一章。基于第一性原理：算力集群规模 × 单集群带宽需求 ↑ → 光互连是「速率每翻一代、单位价值量同步上台阶」的唯一环节。</p>
+
+<h3 class="sub">4.1 代际切换时间表：800G → 1.6T → 3.2T</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>口径</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+<tbody>
+<tr><td><strong>高盛（2026-04 上调后）</strong></td><td class="num">800G 3400万只 / 1.6T 2600万只</td><td class="num">800G 4500万 / 1.6T 4600万 / 3.2T 1300万</td><td class="num">800G+ 市场 560亿美元</td></tr>
+<tr><td><strong>内资中性情景（光芯片深度报告）</strong></td><td class="num">800G 4000万 / 1.6T 2000万</td><td class="num">800G 6000万 / 1.6T 5000万 / CPO 20万台</td><td class="num">800G 5000万 / 1.6T 7000万 / 3.2T 2000万 / CPO 30万台</td></tr>
+<tr><td><strong>硅光渗透率（中性）</strong></td><td class="num">800G 40% / 1.6T 60%</td><td class="num">55% / 65%</td><td class="num">60% / 70% / 3.2T 75%</td></tr>
+<tr><td><strong>市场规模（Lightcounting）</strong></td><td class="num">数通光模块 228亿美元；800G+1.6T 合计146亿（64%）</td><td class="num">1.6T 出货大幅超过 800G</td><td class="num">2030 年 414亿美元（25-30 CAGR 20%）</td></tr>
+</tbody></table></div>
+<p class="note">高盛更激进：全球光模块市场 2026/27/28 年 510/730/690 亿美元，800G+ 三年 CAGR 31%，硅光占比 800G/1.6T/3.2T 达 60%/80%/100%。两套口径的共同点：<strong>2027 年是 1.6T 反超 800G 的交叉年，也是量价双击最陡的一年。</strong></p>
+
+<h3 class="sub">4.2 技术范式：可插拔 → LPO → CPO 的三层判断</h3>
+<ul class="tick">
+<li><strong>可插拔不死</strong>：Scale-out 与 Scale-across 场景可插拔不可替代；CPO 聚焦柜内超短距高带宽。长期共存，不是替代关系。</li>
+<li><strong>CPO 的现实</strong>：2026 上半年处于「技术验证+小批量试点」，<strong>良率是量产核心瓶颈</strong>，2026 年实际量产规模极为有限；能否 2027-28 大规模应用取决于良率突破。内资中性预期 2027 年 CPO 约 20 万台。</li>
+<li><strong>3.2T 已有芯片级铺垫</strong>：博通 OFC 2026 发布首款 400G/lane DSP（Taurus BCM83640），2027-28 年支撑 3.2T 商业化验证。英伟达路线图推动下，高盛已把 3.2T 需求加速纳入模型（旭创目标价上调至 2581 元的核心依据）。</li>
+</ul>
+
+<h3 class="sub">4.3 光芯片：供需缺口是链条上最紧的一环</h3>
+<p class="body">速率升级对上游光芯片（EML/CW/DFB）的需求弹性大于光模块本身：1.6T 硅光方案单模块 CW 激光器用量倍增，而高端光芯片扩产受设备（MOCVD）、良率爬坡周期（12-18 个月）双重约束。按 2027 年满产口径测算：东山精密约 5-6 亿颗/年（EML为主+CW）、源杰科技约 0.6 亿颗/年（CW为主）、长光华芯约 1-1.2 亿颗/年（EML）——相对中性情景下 2027 年 1.6T 5000 万只 × 硅光 65% 的 CW 需求，<strong>高端产能依然偏紧，涨价逻辑有产业基础，这正是光芯片股此前领涨（长光华芯近1年 +400%）的第一性原因；也解释了为何本轮去杠杆中它们跌得最深——涨幅最大、久期最长。</strong></p>
+</div></section>
+<section class="blk" id="stocks"><div class="container reveal">
+<div class="sec-tag">SECTION 05</div>
+<h2 class="sec">核心标的：逻辑与拆解</h2>
+<p class="sec-sub">按「产业链位置 × 第一性逻辑 × 当前状态」拆解 12 个标的。所有涨跌幅为 2026-07-22 收盘（美股 07-21）真实数据；判断部分是研究观点，非投资建议。</p>
+
+<h3 class="sub">A股 · 光互连主线八标的</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>标的</th><th>链条位置</th><th>核心逻辑（一句话）</th><th>当前状态</th><th>关键跟踪点</th></tr></thead>
+<tbody>
+<tr><td><strong>中际旭创</strong><br/><span class="num tdn">周-9.3% / YTD +74%</span></td><td>光模块龙头（全球市占 21.2%，高速数通 28.1%）</td><td>1.6T 放量 + 3.2T 定点 + 硅光自研，量价双击最大直接受益者；高盛预计毛利率 42%→50%(2028)</td><td><span class="badge b-acc">H股招股中</span> 7-30 挂牌，最高募 545 亿港元</td><td>H股定价/挂牌表现；1.6T 月度出货爬坡；北美大客户 3.2T 定点</td></tr>
+<tr><td><strong>新易盛</strong><br/><span class="num tdn">周-8.5% / YTD +66%</span></td><td>光模块第二极</td><td>ASIC 客户（谷歌/Meta 链）弹性大，1.6T 份额提升逻辑；净利率行业最高</td><td>高位震荡，跌幅小于器件端</td><td>ASIC 服务器放量节奏；泰国产能爬坡</td></tr>
+<tr><td><strong>天孚通信</strong><br/><span class="num tdn">周-16.1% / 月-33%</span></td><td>无源器件平台 + 光引擎代工</td><td>CPO 时代「卖铲人」：光引擎/FAU/隔离器多环节卡位，单机价值量随速率升级抬升</td><td>深度回调（月-33%）</td><td>CPO 光引擎送样→小批量的客户验证进度</td></tr>
+<tr><td><strong>太辰光</strong><br/><span class="num tdn">周-26.1% / 月-46%</span></td><td>MPO/跳线 + CPO 机内无源期权</td><td>CPO 上量则机内光连接（MMT/MPO/Shuffle）价值量数倍扩张；弹性期权型标的</td><td>本轮跌幅最深之一</td><td>CPO 良率突破新闻；大客户订单节奏</td></tr>
+<tr><td><strong>源杰科技</strong><br/><span class="num tdn">周-21.8%</span></td><td>光芯片（CW 为主）</td><td>硅光渗透率提升 = CW 激光器量倍增；2027E 满产约 0.6 亿颗/年，供需缺口受益者</td><td>高位剧烈回撤（日振幅 13%）</td><td>CW 产能爬坡与新产线投产；大客户份额</td></tr>
+<tr><td><strong>长光华芯</strong><br/><span class="num tdn">周-32.9% / YTD +139%</span></td><td>光芯片（EML）</td><td>EML 高壁垒国产替代 + 2027E 满产 1-1.2 亿颗；涨价逻辑最陡但兑现最远</td><td>本轮周跌幅最大（-33%）</td><td>EML 良率/客户导入；季度收入环比</td></tr>
+<tr><td><strong>仕佳光子</strong><br/><span class="num tdn">周-20.7% / 月-43%</span></td><td>AWG/PLC + DFB</td><td>无源+有源双轮，AWG 在 CPO/CW 外置光源方案中价值量抬升</td><td>月度腰斩式回调</td><td>CW 外置光源方案定型；数通收入占比</td></tr>
+<tr><td><strong>光库科技</strong><br/><span class="num tdn">周-18.6% / 月-42%</span></td><td>TFLN 薄膜铌酸锂 + 光纤器件</td><td>TFLN 调制器是 3.2T 之后代际的技术期权；当下业绩支撑主要靠传统主业</td><td>期权价值被压缩最狠的阶段</td><td>TFLN 数通客户送样进度</td></tr>
+</tbody></table></div>
+
+<h3 class="sub">算力与整机 · 四标的</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>标的</th><th>链条位置</th><th>核心逻辑</th><th>关键跟踪点</th></tr></thead>
+<tbody>
+<tr><td><strong>寒武纪</strong><br/><span class="num tdn">周-2.8% / YTD +44%</span></td><td>国产 AI 芯片</td><td>国产算力β最纯载体；思元系列进入互联网大厂批量采购名单，2026 收入兑现元年</td><td>季度收入确认节奏；下一代芯片流片</td></tr>
+<tr><td><strong>海光信息</strong><br/><span class="num tup">周+2.31% / YTD +48%</span></td><td>国产 CPU+DCU</td><td>深算系列生态最接近 CUDA；信创+智算双轮。<strong>本周逆势上涨——资金从「光」向「国产算力」切换的信号</strong></td><td>深算四号进展；与中科曙光整合</td></tr>
+<tr><td><strong>沪电股份</strong><br/><span class="num tdn">周-16.8%</span></td><td>AI PCB（高多层/HDI）</td><td>800G 交换机+AI 服务器 PCB 主力供应商；但「涨价驱动」叙事正被市场重新定价为稳态制造业</td><td>产能利用率；ASP 环比走势</td></tr>
+<tr><td><strong>工业富联</strong><br/><span class="num tdn">周-4.6% / YTD -1.6%</span></td><td>AI 服务器 ODM</td><td>GB/Rubin 整机放量最大代工方；低毛利高周转模式，估值天花板清晰</td><td>Rubin 机柜出货指引；毛利率</td></tr>
+</tbody></table></div>
+
+<h3 class="sub">海外锚：为 A 股定价提供参照</h3>
+<ul class="tick">
+<li><strong>英伟达（周-3.7%）</strong>：回调温和，YTD 仍 +10%。它是整个链条的「贴现率」——只要 NVDA 不破位，A 股 AI 硬件的调整就更像资金结构问题。</li>
+<li><strong>美光（近1年+745%）与 Marvell（YTD+136%）</strong>：说明全球资金仍在 AI 硬件内部轮动（存储、ASIC），而非撤离 AI。</li>
+<li><strong>甲骨文（YTD -35%）</strong>：链条上唯一被系统性抛弃的大票——「借债买卡转租」模式的回报率被证伪。它是分辨「AI 需求真伪」的反面对照组：市场惩罚的是商业模式，不是 AI 本身。</li>
+</ul>
+</div></section>
+
+<section class="blk" id="china"><div class="container reveal">
+<div class="sec-tag">SECTION 06</div>
+<h2 class="sec">中国力量：国产算力的独立主线</h2>
+<p class="sec-sub">2026 年国内算力供给端正从「单一紧缺」转向「结构性平衡」，这条主线与北美 Capex 周期相对独立，是本轮调整中相对抗跌的方向（寒武纪周-2.8%、海光周+2.3% vs 光模块周-9%~-33%）。</p>
+
+<div class="grid2">
+<div class="card"><h4 class="tac" style="margin-bottom:8px">供给端：三个拐点同时出现</h4>
+<ul class="tick" style="margin:0">
+<li><strong>外部边际改善</strong>：NVIDIA H200 合规版获批入华，缓解头部互联网厂商训练算力焦虑。</li>
+<li><strong>国产芯片跨过「可用→好用」拐点</strong>：昇腾、寒武纪思元、海光深算实战快速迭代；百度昆仑芯、阿里平头哥、字节自研均大规模部署；摩尔线程、沐曦已上市/推进 IPO。</li>
+<li><strong>上游产能保障</strong>：中芯国际先进制程扩产突破，产能利用率回升，资本开支高位。</li>
+</ul></div>
+<div class="card"><h4 class="tac" style="margin-bottom:8px">需求端：政策 + 能效双推手</h4>
+<ul class="tick" style="margin:0">
+<li>字节、阿里、腾讯 Capex 趋势明确（阿里前三季 +132%），深度绑定头部 CSP 的供应链公司业绩确定性最高。</li>
+<li>数据中心能效新规：小于 14nm 芯片要求算力 ≥0.5 TFlops/W——H20 仅 0.37 不达标，<strong>能效监管客观上为国产高能效芯片（寒武纪、昇腾符合要求）让出份额</strong>。</li>
+<li>券商共识：2026 年国内算力链进入「全链通胀」周期，景气从核心芯片向 AIDC、云服务、电力设备、服务器外溢。</li>
+</ul></div>
+</div>
+
+<div class="callout"><strong>投资含义：</strong>国产算力是「供给约束解除 + 需求爆发」的双击，业绩兑现路径（2026 年收入确认）比海外链更近；但估值也已计入较多预期（寒武纪 YTD +44%）。它与光互连主线的关系不是二选一——国产集群同样需要高速光互连，光模块/光芯片的国内需求是第二增长曲线。</div>
+</div></section>
+<section class="blk" id="drawdown"><div class="container reveal">
+<div class="sec-tag">SECTION 07</div>
+<h2 class="sec">本轮调整：发生了什么，怎么办</h2>
+<p class="sec-sub">7 月中旬以来 A 股 AI 硬件的下跌，需要拆成「交易层」与「基本面层」两个问题分别回答。答错层次，就会在底部割肉或在半山腰抄底。</p>
+
+<h3 class="sub">7.1 全过程复盘：三个压力源共振</h3>
+<ol class="steps">
+<li><strong>估值透支 + 利好兑现（7-13 起）</strong>：亨通光电中报预增 87-121% 却一字跌停——「利好落地即利空」是估值透支期的标志性形态；部分机构目标价已低于市价。</li>
+<li><strong>杠杆出清（7-17「黑色星期五」）</strong>：全市场超 5000 只个股下跌，沪指 -3.05%，科创50/创业板跌超 7%，全天成交 2.67 万亿；前期光模块行情积累的海量融资盘触发批量强减。光模块三巨头单日：旭创 -12%、天孚 -13.4%、新易盛 -11%。</li>
+<li><strong>叙事动摇（贯穿全程）</strong>：市场流传「1.6T 需求不及预期/放量延后/供过于求」传言；旭创在机构电话会澄清——个别客户下调部分 1.6T 采购，但新增 AI 客户同步上调，总量稳健向上，800G 甚至超预期。同时「涨价驱动利润高增」的叙事被部分资金证伪，PCB 等环节估值从题材成长定价向稳态制造业定价回归。</li>
+</ol>
+
+<h3 class="sub">7.2 结构特征：指数没崩，结构在出清</h3>
+<div class="grid2">
+<div class="card"><h4 style="margin-bottom:8px">跌得深的（久期长、涨幅大、杠杆重）</h4>
+<ul class="tick" style="margin:0">
+<li>光芯片/无源器件：长光华芯周 -33%、太辰光周 -26%、源杰周 -22%、仕佳周 -21%、光库周 -19%</li>
+<li>共同点：年内涨幅 1-4 倍、盈利兑现在 2027 年之后的「期权型」资产</li>
+</ul></div>
+<div class="card"><h4 style="margin-bottom:8px">相对抗跌的（业绩近、逻辑独立）</h4>
+<ul class="tick" style="margin:0">
+<li>光模块龙头：旭创/新易盛周 -8~-9%（有 H 股 IPO 定价锚 + 中报高增支撑）</li>
+<li>国产算力：海光周 +2.3%、寒武纪周 -2.8%（独立主线，资金切换方向）</li>
+<li>美股同链条：NVDA 周 -3.7%、ANET 周 -0.3%——全球产业逻辑未动</li>
+</ul></div>
+</div>
+<div class="callout"><strong>定性：这是一次「去杠杆式结构出清」，不是产业逻辑证伪。</strong>证据链：① 美股同链条温和；② Capex 指引无一下修；③ 测试设备（联讯仪器预增 800%+）、H 股 IPO 基石抢筹（270 亿港元）等产业信号与「见顶」叙事矛盾；④ 跌幅排序严格按「久期×涨幅×杠杆」排列，是资金行为特征而非基本面特征。</div>
+
+<h3 class="sub">7.3 三情景框架与应对</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>情景</th><th>触发条件</th><th>市场路径</th><th>应对</th></tr></thead>
+<tbody>
+<tr><td><span class="badge b-red">修复（基准）</span></td><td>融资余额企稳 + 旭创 H 股挂牌平稳（7-30）+ 中报季业绩兑现</td><td>2-4 周内龙头先修复，器件/光芯片滞后 1-2 个月</td><td>龙头回调位分批回补；期权型标的等右侧信号</td></tr>
+<tr><td><span class="badge b-acc">震荡</span></td><td>杠杆出清拖长 + 8 月云厂财报 Capex 表述中性</td><td>宽幅箱体 2-3 个月，个股按中报分化</td><td>只做业绩确定性最高的 2-3 只，控制仓位</td></tr>
+<tr><td><span class="badge b-grn">下行</span></td><td>任一云厂下修 2026 Capex / NVDA 破位 / 1.6T 订单实质性砍单</td><td>估值中枢整体下移 20-30%</td><td>触发即减仓，不与叙事辩论</td></tr>
+</tbody></table></div>
+
+<h3 class="sub">7.4 空头预警信号清单（盯这六个，不盯股价）</h3>
+<ul class="tick">
+<li>① 任一北美云厂在财报中<strong>下修</strong> 2026 Capex 指引（下一窗口：8 月初财报季）</li>
+<li>② 旭创/新易盛月度出货环比连续两月下滑（产业链调研口径）</li>
+<li>③ NVDA 数据中心收入环比转负，或 Rubin 交付指引推迟</li>
+<li>④ 光芯片现货价格松动（EML/CW 报价是链条最敏感的温度计）</li>
+<li>⑤ 甲骨文式信用事件扩散——neocloud（CoreWeave 类）融资断裂</li>
+<li>⑥ 旭创 H 股上市破发且持续走弱（全球定价资金对中国光模块的态度锚）</li>
+</ul>
+
+<h3 class="sub">7.5 持仓处置：三分法（止损看逻辑，不看跌幅）</h3>
+<ol class="steps">
+<li><strong>逻辑完好 + 业绩临近的（旭创/新易盛/天孚类）</strong>：拿住，中报季是验证点；跌破合理估值下沿可补。</li>
+<li><strong>逻辑完好 + 兑现远的期权型（光芯片/CPO 器件）</strong>：不加仓不割肉，等 CPO 良率/产能爬坡的产业信号，右侧再加。</li>
+<li><strong>逻辑依赖「涨价永续」的（部分 PCB/整机）</strong>：反弹减仓——估值范式已从成长定价切换回制造业定价，这类是本轮真正的受损方。</li>
+</ol>
+</div></section>
+
+<section class="blk" id="calendar"><div class="container reveal">
+<div class="sec-tag">SECTION 08</div>
+<h2 class="sec">未来90天：催化剂日历与行动窗口</h2>
+<p class="sec-sub">每个节点提前写好「如果 A 则做 X，如果 B 则做 Y」，避免临场情绪化。</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>时间</th><th>事件</th><th>看什么</th><th>预案</th></tr></thead>
+<tbody>
+<tr><td class="num">07-27/07-28</td><td>旭创 H 股招股截止 / 定价</td><td>国际配售倍数、最终定价距上限折让</td><td>定价贴近 1010 港元上限 = 全球资金强背书，A 股链条情绪修复信号</td></tr>
+<tr><td class="num">07-30</td><td><strong>旭创 H 股挂牌（03308.HK）</strong></td><td>首日表现、AH 溢价</td><td>平稳/上涨 → 基准情景确认，分批回补龙头；破发深跌 → 推迟加仓计划</td></tr>
+<tr><td class="num">07 月末-08 月初</td><td>微软/谷歌/Meta/亚马逊财报季</td><td>2026 Capex 指引是否重申或上调；AI 收入贡献表述</td><td>任一家下修 = 空头信号①触发，无条件降仓位；集体重申 = 中性情景上限打开</td></tr>
+<tr><td class="num">08 月中下旬</td><td>A 股中报季（旭创/新易盛/天孚/光芯片）</td><td>1.6T 收入占比、毛利率、光芯片产能利用率</td><td>业绩+指引双超 = 修复情景主升；「预增但低于买方预期」= 震荡情景延长</td></tr>
+<tr><td class="num">08 月末</td><td>NVDA 财报（FY2027 Q2）</td><td>数据中心环比、Rubin 出货表述、中国区收入</td><td>链条贴现率事件，超预期则光互连β全面修复</td></tr>
+<tr><td class="num">09 月</td><td>ECOC 2026 欧洲光通信展</td><td>3.2T 样品、CPO 良率进展、TFLN 商业化</td><td>CPO 良率突破新闻 = 器件期权型标的（太辰光/天孚/仕佳）右侧信号</td></tr>
+<tr><td class="num">09-10 月</td><td>国产算力招标季 + 三季报预告</td><td>运营商/互联网智算中心招标中标结构；寒武纪/海光收入确认</td><td>国产份额继续抬升 = 独立主线加仓依据</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="blk" id="onepage"><div class="container reveal">
+<div class="sec-tag">SECTION 09</div>
+<h2 class="sec">一页纸记住全部</h2>
+<div class="grid2">
+<div class="card"><h4 class="tac" style="margin-bottom:10px">产业（决定方向）</h4>
+<ul class="tick" style="margin:0">
+<li>四大云厂 2026 Capex 指引约 5987 亿美元（+67%），总闸门仍开</li>
+<li>价值向「光互连」迁移：2027 年 1.6T 反超 800G，3.2T 导入，硅光占比 60-80%</li>
+<li>光芯片是链条最紧一环，涨价有产业基础</li>
+<li>国产算力「可用→好用」拐点 + 能效新规让份额，独立主线</li>
+<li>盯裂缝：甲骨文模式证伪、云厂 FCF 压力、ASIC 侵蚀 NVDA 毛利叙事</li>
+</ul></div>
+<div class="card"><h4 class="tac" style="margin-bottom:10px">交易（决定节奏）</h4>
+<ul class="tick" style="margin:0">
+<li>本轮下跌 = 去杠杆式结构出清，非基本面证伪（美股温和、Capex 未下修）</li>
+<li>跌幅严格按「久期×涨幅×杠杆」排序：光芯片-20~-33% &gt; 龙头-8~-9%</li>
+<li>处置三分法：业绩近的拿住、期权型等右侧、涨价叙事型反弹减</li>
+<li>六大空头信号里最硬的两个：云厂下修 Capex、光芯片现货价松动</li>
+<li>最近的两个验证点：<strong>07-30 旭创 H 股挂牌、8 月初云厂财报</strong></li>
+</ul></div>
+</div>
+<div class="callout"><strong>一句话主线：</strong>Capex 决定「有没有」，速率升级决定「谁最受益」，杠杆决定「什么价格给你」。产业三问都还在正确的方向上，当下的问题只是第三个——价格正在被杠杆重新发给有耐心的人。</div>
+</div></section>
+
+<div class="foot"><div class="container">
+<p><strong>数据与口径说明</strong>：A股/港股行情为 2026-07-22 收盘（进门财经/聚源标准化行情）；美股为 2026-07-21 收盘、07-22 盘前口径。Capex 数据来自各公司业绩说明会及指引（华龙证券、兴业证券、国投证券整理口径，Bernstein 交叉验证）；光模块出货预测来自高盛 2026-04 报告、Lightcounting 及内资光芯片行业深度报告（中性/乐观/悲观三情景）；新闻事件来自同花顺 iFinD 资讯（21世纪经济报道、中国基金报、上海证券报、每日经济新闻等）。</p>
+<p style="margin-top:10px">本页为投研参考资料，所有「应对/预案」均为研究框架示例，不构成投资建议。生成时间：2026-07-22 盘前档（美股 07-21 收盘、07-22 盘前实时；A 股 07-22 收盘沿用） · 数据源：同花顺 iFinD / 进门财经 / 冈底斯研报库 / 恒生聚源</p>
+</div></div>
+
+<script>
+(function(){
+var p=document.getElementById('progress');
+window.addEventListener('scroll',function(){
+var h=document.documentElement;
+var pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+p.style.width=pct+'%';
+},{passive:true});
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+</script>
+</body></html>
